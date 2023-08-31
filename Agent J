@@ -1,0 +1,67 @@
+/**
+ *    Author: lulu (Tasmir_)
+ *    Created:  30-August-2023  12:12:22
+**/
+#include<bits/stdc++.h>
+using namespace std;
+
+#define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+
+#define ll long long 
+
+#define fo(i,n) for(ll i=0; i<n; ++i)
+#define Fo(i,k,n) for(ll i=k;k<n?i<n:i>=n;i<n?++i:--i)
+#define deb(x) cout<<#x <<"=" <<x <<endl
+#define deb2(x,y) cout<<#x <<"=" <<x <<" " <<#y <<"=" <<y <<endl
+#define pb push_back
+#define mp make_pair
+#define F first
+#define S second
+#define all(x) x.begin(), x.end()
+#define endl "\n"
+
+typedef pair<ll,ll>      pl;
+typedef vector<ll>       vl;
+
+const int mod = 1e9+7;
+const ll N = 1e7+10;
+//====================================
+
+void solve(ll cs){
+    double r1, r2, r3; cin>>r1 >>r2 >>r3;
+
+    double a=r1+r2, b=r2+r3, c=r1+r3;
+
+    double s=(a+b+c)/2.0;
+
+    double tri=sqrt(s*(s-a)*(s-b)*(s-c));
+
+    double s_c=0;
+
+    s_c=(1.0*(a*a+b*b)-c*c)/(2.0*a*b);
+    s_c=acos(s_c);
+    tri-=((0.5*r2*r2*s_c));
+
+    s_c=(1.0*(b*b+c*c)-a*a)/(2.0*b*c);
+    s_c=acos(s_c);
+    tri-=((0.5*r3*r3*s_c));
+
+    s_c=(1.0*(a*a+c*c)-b*b)/(2.0*a*c);
+    s_c=acos(s_c);
+    tri-=((0.5*r1*r1*s_c));
+
+    cout<<"Case " <<cs <<": ";
+    cout<<setprecision(10) <<fixed <<tri <<endl;
+}
+
+
+int main(){
+    optimize();
+
+    ll t=1, cs=1;
+    cin>>t;
+    while(t--){
+        solve(cs);
+        cs++;
+    }
+}
