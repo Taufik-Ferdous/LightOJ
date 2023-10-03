@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int my_fun(int a, int b){
+    
+    int ans=0;
+    
+    ans = 9 + 10 + (abs(a-b))*4 + a*4;
+
+    return ans;    
+}
+
+int main(){
+    int n, c=1;
+    cin>>n;
+
+    while(n--){
+        int a, b, ans=0;
+        cin>>a >>b;
+
+        cout<<"Case " <<c <<": " <<my_fun(a, b) <<endl;
+        c++;
+    }
+    return 0;
+}
