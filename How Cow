@@ -1,36 +1,36 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int main()
-{
-    int n, count=1;
+int main(){
+    int n, c=1;
     cin>>n;
-    while(n--)
-    {
-        cout << "Case " << count << ':' << endl;
-        int x1, x2, y1, y2;
-        cin >> x1 >> y1 >> x2 >> y2;
 
-        int a;
-        cin >> a;
-        while (a--)
-        {
-            int x3, y3, check = 0;
-            cin >> x3 >> y3;
-            if (x3 > x1 && y3 > y1)
-            {
-                if (x3 < x2 && y3 < y2)
-                {
-                    cout<<"Yes" << endl;
-                    check++;
+    while(n--){
+        int x1,x2,y1,y2;
+
+        cin>>x1 >>y1 >>x2 >>y2;
+
+        int cow;
+        cin>>cow;
+
+        cout<<"Case " <<c <<':' <<endl;
+
+        while(cow--){
+            int a, b;
+            cin>>a >>b;
+
+            if(a>=x1 && a<=x2){
+                if(b>=y1 && b<=y2){
+                    cout<<"Yes" <<endl;
+                }
+                else{
+                    cout<<"No" <<endl;
                 }
             }
-            if (check == 0)
-                cout<<"No" << endl;
-
-            check = 0;
+            else{
+                cout<<"No" <<endl;
+            }
         }
-        count++;
+        c++;
     }
-    return 0;
 }
