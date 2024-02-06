@@ -1,0 +1,37 @@
+/**
+ *    Author: lulu (Tasmir_)
+ *    Created: 06-February-2024  13:03:35
+**/
+#include<bits/stdc++.h>
+using namespace std;
+
+#define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+
+#define ll long long
+
+//====================================
+
+ll test_case=1;
+
+void solve(){
+    string s; cin>>s;
+    ll n = s.length();
+    cout<<"Case " <<test_case++ <<": ";
+    for(ll i=0, j=n-1; i<j; ++i, --j){
+        if(s[i]!=s[j]){
+            cout<<"No" <<'\n';
+            return;
+        }
+    }
+    cout<<"Yes" <<'\n';
+}
+
+
+int main(){
+    optimize();
+
+    ll t=1;
+    cin>>t;
+    while(t--)
+        solve();
+}
