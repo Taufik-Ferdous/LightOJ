@@ -1,0 +1,38 @@
+/**
+ *    Author: lulu (Tasmir_)
+ *    Created: 13-March-2024  19:41:17
+**/
+#include<bits/stdc++.h>
+using namespace std;
+
+#define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+
+#define ll long long
+
+//====================================
+ll cs=1;
+
+void solve(){
+    vector<ll> v(10010);
+    ll n; cin>>v[0] >>v[1] >>v[2] >>v[3] >>v[4] >>v[5] >>n;
+    for(ll i=6; i<=n; ++i)
+        v[i] = (v[i-1]+v[i-2]+v[i-3]+v[i-4]+v[i-5]+v[i-6])%10000007;
+    cout<<"Case " <<cs++ <<": ";
+    cout<<v[n]%10000007 <<'\n';
+}
+
+
+int main(){
+
+#ifndef ONLINE_JUDGE
+    freopen("in.txt", "r", stdin);
+    freopen("out.txt", "w", stdout);
+#endif
+
+    optimize();
+
+    ll t=1;
+    cin>>t;
+    while(t--)
+        solve();
+}
