@@ -1,0 +1,43 @@
+/**
+ *    Author: lulu (Tasmir_)
+ *    Created: 15-March-2024  02:50:34
+**/
+#include<bits/stdc++.h>
+using namespace std;
+
+#define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+
+#define ll long long
+
+//====================================
+ll cs=1;
+
+void solve(){
+    ll n; cin>>n;
+    vector<pair<ll, string>> v(n);
+    for(ll i=0; i<n; ++i){
+        string s; cin>>s;
+        ll a, b, c; cin>>a >>b >>c;
+        v[i] = {a*b*c, s};
+    }
+    sort(v.begin(), v.end());
+    cout<<"Case " <<cs++ <<": ";
+    if(v[0].first<v[n-1].first) cout<<v[n-1].second <<" took chocolate from " <<v[0].second <<'\n';
+    else cout<<"no thief\n";
+}
+
+
+int main(){
+
+#ifndef ONLINE_JUDGE
+    freopen("in.txt", "r", stdin);
+    freopen("out.txt", "w", stdout);
+#endif
+
+    optimize();
+
+    ll t=1;
+    cin>>t;
+    while(t--)
+        solve();
+}
