@@ -1,0 +1,60 @@
+/**
+ *    Author: lulu (Tasmir_)
+ *    Created: 14-March-2024  19:12:46
+**/
+#include<bits/stdc++.h>
+using namespace std;
+
+#define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+
+#define ll long long
+
+//====================================
+
+ll cs=1;
+
+void solve(){
+    ll n, q; cin>>n >>q;
+    vector<ll> v(n);
+    for(auto &i: v) cin>>i;
+    ll val=0;
+    while(q--){
+        char op; cin>>op;
+        if(op == 'R') reverse(v.begin(), v.end());
+        else if(op=='S'){
+            ll a; cin>>a;
+            for(auto &i: v) i+=a;
+        }
+        else if(op=='M'){
+            ll a; cin>>a;
+            for(auto &i: v) i*=a;
+        }
+        else if(op=='D'){
+            ll a; cin>>a;
+            for(auto &i: v) i/=a;
+        }
+        else{
+            ll a, b; cin>>a >>b;
+            swap(v[a], v[b]);
+        }
+    }
+    cout<<"Case " <<cs++ <<":\n";
+    for(auto i: v) cout<<i+val <<' ';
+    cout<<'\n';
+}
+
+
+int main(){
+
+#ifndef ONLINE_JUDGE
+    freopen("in.txt", "r", stdin);
+    freopen("out.txt", "w", stdout);
+#endif
+
+    optimize();
+
+    ll t=1;
+    cin>>t;
+    while(t--)
+        solve();
+}
