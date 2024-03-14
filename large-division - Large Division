@@ -1,0 +1,45 @@
+/**
+ *    Author: lulu (Tasmir_)
+ *    Created: 14-March-2024  21:29:23
+**/
+#include<bits/stdc++.h>
+using namespace std;
+
+#define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+
+#define ll long long
+
+//====================================
+ll cs=1;
+
+void solve(){
+    string s; cin>>s;
+    ll n; cin>>n;
+    if(n<0) n = abs(n);
+    ll i=0;
+    if(s[0] == '-') i=1;
+    ll rem = 0;
+    for(; i<s.size(); ++i){
+        rem = rem*10 + s[i]-'0';
+        rem%=n;
+    }
+    cout<<"Case " <<cs++ <<": ";
+    if(rem==0) cout<<"divisible\n";
+    else cout<<"not divisible\n";
+}
+
+
+int main(){
+
+#ifndef ONLINE_JUDGE
+    freopen("in.txt", "r", stdin);
+    freopen("out.txt", "w", stdout);
+#endif
+
+    optimize();
+
+    ll t=1;
+    cin>>t;
+    while(t--)
+        solve();
+}
